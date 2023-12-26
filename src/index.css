@@ -7,9 +7,12 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark;
+  */
+  color: rgb(15, 0, 0);
+  /* text-align: center; */
+
+  background-color: gray;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,4 +22,5 @@
 
 body {
   margin: 0;
+  display: flex;
 }
