@@ -31,7 +31,5 @@ yarn dev     - to start the development
 ## Deployed and published url
 
 - [Image Gallery](https://img-gallery-omega.vercel.app/)
+- ![2023-12-27-11-44-img-gallery-omega vercel app](https://github.com/vd89/img-gallery/assets/34570078/298106e7-c22e-48d3-9801-679a4e832435)
 
-- ![2023-12-27-11-44-img-gallery-omega vercel app](https://github.com/vd89/img-gallery/assets/34570078/06401c83-e730-4183-80a8-814a26ecbc8b)
-
-- 
