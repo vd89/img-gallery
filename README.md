@@ -22,6 +22,7 @@ yarn -version
 
 ```bash
 
+
 yarn         - to install the dependencies
 
 yarn dev     - to start the development
@@ -31,3 +32,6 @@ yarn dev     - to start the development
 
 - [Image Gallery](https://img-gallery-omega.vercel.app/)
 
+- ![2023-12-27-11-44-img-gallery-omega vercel app](https://github.com/vd89/img-gallery/assets/34570078/06401c83-e730-4183-80a8-814a26ecbc8b)
+
+- 
