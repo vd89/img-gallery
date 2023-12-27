@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 import { DndContext, DragOverlay, MouseSensor, TouchSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core';
 import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { photos } from '../constants';
 import DragItem from './DragItem';
 import GridContainer from './GridContainer';
 import { Sortable } from './Sortable';
 
-const DraggableArea = () => {
+const DraggableArea = ({ freeze }) => {
   // set the data to the state
   const [items, setItems] = useState(photos);
   // maintaining which image is dragging
@@ -26,6 +27,15 @@ const DraggableArea = () => {
     }
     setSelectedImages(selected);
   };
+
+  useEffect(() => {
+    console.log('test', localStorage.getItem('itemsArray'));
+    if (localStorage.getItem('itemsArray') !== null) {
+      console.log('hello world');
+    }
+
+    return () => {};
+  }, []);
 
   // using mouse and touch sensor for drag and drop functionality
   const sensors = useSensors(
@@ -52,7 +62,8 @@ const DraggableArea = () => {
       setItems(items => {
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
-
+        const updateArr = arrayMove(items, oldIndex, newIndex);
+        localStorage.setItem('itemsArray', JSON.stringify(updateArr));
         return arrayMove(items, oldIndex, newIndex);
       });
     }
@@ -81,6 +92,7 @@ const DraggableArea = () => {
         {/* SortableContext is wrapper for sortable items */}
         <SortableContext items={items} strategy={rectSortingStrategy}>
           {/* call the grid layout for all the images */}
+
           <GridContainer>
             {/* mapping all data from items */}
             {items.map((url, index) => (
@@ -102,9 +114,11 @@ const DraggableArea = () => {
           </GridContainer>
         </SortableContext>
         {/*drag overlay maintains that image which is dragging */}
+        {/* <Freeze freeze={freeze} > */}
         <DragOverlay adjustScale={true}>
           {activeId ? <DragItem src={activeId} index={items.indexOf(activeId)} overlay={true} /> : null}
         </DragOverlay>
+        {/* </Freeze> */}
       </DndContext>
     </>
   );

@@ -6,9 +6,9 @@ const ButtonGroup = props => {
 
   return (
     <div className='flex  justify-center'>
-      <div className='gap-4 flex justify-evenly'>
+      <div className='gap-4 flex justify-evenly mt-5'>
         <Button outline color='green' onClick={onAll}>
-          All
+          Freeze
         </Button>
         <Button outline color='green' onClick={onReset}>
           Reset

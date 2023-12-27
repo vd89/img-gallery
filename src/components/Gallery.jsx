@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import DraggableArea from './DraggableArea';
 
-function Gallery() {
+function Gallery({ freeze }) {
   return (
-    <section className='w-full max-w-5xl pb-10 bg-white rounded-lg shadow-2x1'>
+    <section className='w-full pb-10rounded-lg shadow-2x1'>
       {/* add the Draggable area */}
-      <DraggableArea />
+      <DraggableArea freeze={freeze} />
     </section>
   );
 }

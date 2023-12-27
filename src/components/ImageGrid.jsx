@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import Gallery from './Gallery';
 
-const ImageGrid = () => {
+const ImageGrid = ({ freeze }) => {
   return (
-    <div className='grid items-center justify-center h-screen bg-inherit'>
-      <Gallery />
+    <div className='grid items-center justify-center h-screen  '>
+      <Gallery freeze={freeze} />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const DragItem = forwardRef(({ src, alt, faded, style, isDragging, ...props }, r
       className='relative overflow-hidden border-4 rounded-lg cursor-move group first:col-span-2 first:row-span-2 first:w-full first:h-full '
     >
       {/* call image layout and passing props */}
-      <Image width={500} height={450} isDragging={isDragging} src={src} alt={alt} />
+      <Image width={900} height={900} isDragging={isDragging} src={src} alt={alt} />
     </div>
   );
 });

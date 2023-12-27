@@ -1,22 +1,23 @@
-import { Card } from 'flowbite-react';
+import { useState } from 'react';
 import ButtonGroup from './ButtonGroup';
 import Header from './Header';
 import ImageGrid from './ImageGrid';
 
 const PhotoGallery = () => {
+  const [freeze, setFreeze] = useState(false);
   const onReset = () => {
-    console.log('onReset');
+    location.reload();
   };
 
   const onAll = () => {
-    console.log('onAllClick');
+    setFreeze(!freeze);
   };
   return (
-    <Card className='flex'>
+    <div>
       <Header />
       <ButtonGroup onReset={onReset} onAll={onAll} />
-      <ImageGrid />
-    </Card>
+      <ImageGrid freeze={freeze} />
+    </div>
   );
 };
 
